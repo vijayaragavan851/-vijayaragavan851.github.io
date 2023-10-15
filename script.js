@@ -55,17 +55,24 @@ function createTable({num,id}){
 function multi(){
     const num = Number(inp.value);
     inp.value = "";
-    const regExp =  /^[1-9]{1,3}$/
+    const regExp =  /^[0-9]{1,3}$/
     if(regExp.test(num)){
-      const id = taskId();
-      const obj = {id:id,num:num}
-      tables.push(obj)
-      setTables();
-      createTable(obj)
+         if((num !== 0) && (num <= 100)){
+              const id = taskId();
+              const obj = {id:id,num:num}
+              tables.push(obj)
+              setTables();
+              createTable(obj)
+         }
+   
+         else{ 
+             alert("Please Enter the Number from 1 to 100");
+         }
+     
     }
 
     else{
-      alert("please Enter the  number from 1 to 100");
+      alert("Please Enter the  Number from 1 to 100");
     }
    
 }
